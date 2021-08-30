@@ -28,6 +28,12 @@ export default {
   height: 100%;
   top: 0;
   width: 10%;
+  z-index: 1024;
+
+  &:hover {
+    z-index: 1024;
+    opacity: .3;
+  }
 
   &:first-of-type {
     left: 0;
