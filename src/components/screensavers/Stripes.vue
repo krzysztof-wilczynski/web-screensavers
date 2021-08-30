@@ -1,5 +1,5 @@
 <template>
-	<h1>Bubbles</h1>
+	<h1>Stripes</h1>
 </template>
 
 <script lang="ts">

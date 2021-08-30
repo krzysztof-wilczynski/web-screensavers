@@ -1,13 +1,26 @@
 <template>
-	<h1>Oj</h1>
+	<div
+		id="left"
+		@click="$emit('switch', 'previous')"
+	>
+		<div class="icon">
+		</div>
+	</div>
+	<div
+		id="right"
+		@click="$emit('switch', 'next')"
+	>
+		<div class="icon"></div>
+	</div>
 </template>
 
 <script>
 export default {
-	name: 'Slider'
+	name: 'Slider',
+	emits: ['switch']
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
