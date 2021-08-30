@@ -1,16 +1,17 @@
 <template>
 	<div
-		id="left"
+		class="slider"
 		@click="$emit('switch', 'previous')"
 	>
 		<div class="icon">
 		</div>
 	</div>
 	<div
-		id="right"
+		class="slider"
 		@click="$emit('switch', 'next')"
 	>
-		<div class="icon"></div>
+		<div class="icon">
+		</div>
 	</div>
 </template>
 
@@ -22,5 +23,33 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.slider {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  width: 10%;
 
+  &:first-of-type {
+    left: 0;
+
+    &:hover {
+      background: linear-gradient(-90deg, white, black);
+    }
+  }
+
+  &:last-of-type {
+    right: 0;
+
+    &:hover {
+      background: linear-gradient(90deg, white, black);
+    }
+  }
+
+  .icon {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    margin: 0 auto;
+  }
+}
 </style>
