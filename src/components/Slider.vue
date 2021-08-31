@@ -4,6 +4,10 @@
 		@click="$emit('switch', 'previous')"
 	>
 		<div class="icon">
+			<mdicon
+				name="chevronLeft"
+				size="64"
+			></mdicon>
 		</div>
 	</div>
 	<div
@@ -11,14 +15,22 @@
 		@click="$emit('switch', 'next')"
 	>
 		<div class="icon">
+			<mdicon
+				name="chevronRight"
+				size="64"
+			></mdicon>
 		</div>
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+
 export default {
 	name: 'Slider',
-	emits: ['switch']
+	emits: ['switch'],
+	setup() {
+		return {}
+	}
 }
 </script>
 
@@ -29,25 +41,26 @@ export default {
   top: 0;
   width: 10%;
   z-index: 1024;
+  opacity: 0;
+  transition: opacity .25s linear 100ms;
 
   &:hover {
-    z-index: 1024;
-    opacity: .3;
+    opacity: .75;
   }
 
-  &:first-of-type {
+  &:nth-of-type(1) {
     left: 0;
 
     &:hover {
-      background: linear-gradient(-90deg, white, black);
+      background: linear-gradient(90deg, white, rgba(255, 255, 255, 0));
     }
   }
 
-  &:last-of-type {
+  &:nth-of-type(2) {
     right: 0;
 
     &:hover {
-      background: linear-gradient(90deg, white, black);
+      background: linear-gradient(-90deg, white, rgba(255, 255, 255, 0));
     }
   }
 
@@ -55,7 +68,18 @@ export default {
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
+    color: white;
     margin: 0 auto;
+
+    &:nth-of-type(1) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &:nth-of-type(2) {
+      right: 50%;
+      transform: translateX(50%);
+    }
   }
 }
 </style>
