@@ -45,14 +45,14 @@ export default {
   transition: opacity .25s linear 100ms;
 
   &:hover {
-    opacity: .75;
+    opacity: 1;
   }
 
   &:nth-of-type(1) {
     left: 0;
 
     &:hover {
-      background: linear-gradient(90deg, white, rgba(255, 255, 255, 0));
+      background: linear-gradient(90deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
     }
   }
 
@@ -60,25 +60,24 @@ export default {
     right: 0;
 
     &:hover {
-      background: linear-gradient(-90deg, white, rgba(255, 255, 255, 0));
+      background: linear-gradient(-90deg, rgba(255, 255, 255, .5), rgba(255, 255, 255, 0));
     }
   }
 
   .icon {
     position: absolute;
-    transform: translateY(-50%);
     top: 50%;
     color: white;
     margin: 0 auto;
 
     &:nth-of-type(1) {
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
     }
 
     &:nth-of-type(2) {
       right: 50%;
-      transform: translateX(50%);
+      transform: translate(50%, -50%);
     }
   }
 }
